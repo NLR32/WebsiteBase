@@ -1,0 +1,198 @@
+
+body{
+  background-color: #110911; ;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
+#navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 50px;
+  z-index: 999;
+
+  color: white;
+}
+
+#sections{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 35vw;
+}
+
+#Brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+}
+
+#logo {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+}
+
+#brand-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+#nav-links span {
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#nav-links span:hover {
+  color: #19b5fe;
+}
+
+/* BACKGROUND SECTION */
+.background {
+  position: relative; /* NOT fixed — allows scrolling */
+  width: 100%;
+  height: 100vh; /* Takes up full viewport height */
+  background: #110911;
+  overflow: hidden;
+
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/* BALLS ANIMATION */
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+.ball {
+  position: absolute;
+  width: 30vmin;
+  height: 30vmin;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  animation: move linear infinite;
+  z-index: 1;
+}
+
+.ball:nth-child(odd) {
+  color: #6D376D;
+}
+
+.ball:nth-child(even) {
+  color: #D8B1D8;
+}
+
+/* Individual Ball Configurations */
+.ball:nth-child(1) {
+  top: 77%;
+  left: 88%;
+  animation-duration: 18s;
+  animation-delay: -3s;
+  transform-origin: 16vw -2vh;
+  box-shadow: 40vmin 0 5.703076368487546vmin currentColor;
+}
+.ball:nth-child(2) {
+  top: 42%;
+  left: 2%;
+  animation-duration: 16s;
+  animation-delay: -29s;
+  transform-origin: -12vw 18vh;
+  box-shadow: -40vmin 0 5.17594621519026vmin currentColor;
+}
+.ball:nth-child(3) {
+  top: 28%;
+  left: 18%;
+  animation-duration: 28s;
+  animation-delay: -2s;
+  transform-origin: -15vw 3vh;
+  box-shadow: 40vmin 0 5.248179047256236vmin currentColor;
+}
+.ball:nth-child(4) {
+  top: 50%;
+  left: 79%;
+  animation-duration: 42s;
+  animation-delay: -7s;
+  transform-origin: -13vw -6vh;
+  box-shadow: 40vmin 0 5.279749632220298vmin currentColor;
+}
+.ball:nth-child(5) {
+  top: 46%;
+  left: 15%;
+  animation-duration: 48s;
+  animation-delay: -20s;
+  transform-origin: 4vw 0vh;
+  box-shadow: -40vmin 0 5.964309466052033vmin currentColor;
+}
+.ball:nth-child(6) {
+  top: 77%;
+  left: 16%;
+  animation-duration: 32s;
+  animation-delay: -5s;
+  transform-origin: 18vw 4vh;
+  box-shadow: 40vmin 0 5.178483653434181vmin currentColor;
+}
+.ball:nth-child(7) {
+  top: 22%;
+  left: 17%;
+  animation-duration: 45s;
+  animation-delay: -3s;
+  transform-origin: 1vw -20vh;
+  box-shadow: -40vmin 0 5.703026794398318vmin currentColor;
+}
+.ball:nth-child(8) {
+  top: 41%;
+  left: 47%;
+  animation-duration: 50s;
+  animation-delay: -15s;
+  transform-origin: 20vw -3vh;
+  box-shadow: 40vmin 0 5.196265905749415vmin currentColor;
+}
+
+/* SCROLLABLE CONTENT */
+.content {
+  background: white;
+  color: #333;
+  padding: 150px 20%;
+  line-height: 1.7;
+  min-height: 100vh;
+}
