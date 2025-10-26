@@ -3,7 +3,7 @@
   --secondary-color: #161f63;
   --text-color: #ffffff;
   --subtext-color: #6d6d6d;
-  --background-color: #110909;
+  --background-color: rgb(17, 9, 9);
   --subbackground-color: #222225;
 }
 
@@ -37,10 +37,16 @@ body{
   font-weight: bold;
 }
 
+#navbar a{
+  transition: color 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-color);
+  text-decoration: none;
+}
 
 
 
-#navbar span:hover {
+
+#navbar a:hover {
   color: var(--primary-color);
   /* border-bottom: ; */
 }
@@ -73,7 +79,8 @@ body{
   top: 0;
   width: 100vw;
   height: 100vh; 
-  background: var(--background-color);
+  background-color: var(--background-color);
+
   overflow: hidden;
 
 }
@@ -94,12 +101,13 @@ body{
 
 
 #title-box{
-  position: relative;
+
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 70%;
   justify-content: space-around;
   align-items: flex-end;
+  margin-left: 10vw;
   
 }
 #left-title{
@@ -122,8 +130,8 @@ body{
 
 
 #title-img{
-  width: 40rem;
-  height: 40rem;
+  width: 50rem;
+  height: 50rem;
   /* padding: 3rem; */
 
 }
@@ -166,6 +174,59 @@ p{
   
 
 }
+
+
+/* ABOUT US */
+
+#about-us{
+  display: flex;
+  flex-direction: column;
+  margin-top: 101vh;
+  background-color:  var(--background-color);
+  color: var(--text-color);
+  height: 80vh;
+  align-items: center;
+  padding-top: 2vh;
+
+}
+
+#about-us h2{
+  text-align: center;
+  font-weight: bold;
+  width: 80%;
+
+}
+#about-us h4 {
+  font-size: 2rem;
+  text-align: center;
+  width: 50%;
+  color: var(--primary-color);
+}
+#about-us p{
+  width: 60%;
+  align-self: center;
+  line-height: 2.5rem;
+  font-size: 1rem;
+  padding-top: 8vh;
+  
+}
+.small-text{
+  font-size: 2rem;
+  color: var(--subtext-color);
+}
+.glow{
+  box-shadow: 0 0 100px var(--primary-color);
+  background: rgb(47, 80, 152, .4);
+  border-radius: 50%;
+  padding: .25rem;
+  /* color: var(--primary-color); */
+}
+.highlight{
+
+  color: var(--primary-color);
+  font-weight: bold;
+  /* font-size: 2rem; */
+}
 /* TESTIMONIALS */
 #testimonials {
   z-index: 2;
@@ -176,8 +237,8 @@ p{
   justify-content: flex-start;
   align-items: center;
   padding: 0;
-  margin-top: 101vh;
-  margin-bottom: 0;
+  margin-top: 15vh;
+  margin-bottom: 10vh;
   
 }
 
@@ -216,7 +277,7 @@ h2{
 .test{
 
   border-radius: 8px;
-  border-style: solid;
+  /* border-style: solid; */
   border-color: var(--text-color);
   color: var(--text-color);
   display: flex;
@@ -271,77 +332,130 @@ h4{
 }
 
 
-#services{
-  /* z-index: 2; */
+
+/* Services Section */
+#services {
   background: var(--background-color);
   color: var(--text-color);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 12vh;
+  padding-top: 15vh;
   margin: 0;
 }
 
+/* Scroll wrapper with arrows */
+.scroll-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Flex container for service boxes */
 #serv-box {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-
-  padding-top: 10vh;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 0;
+  flex-wrap: nowrap; /* prevent wrapping for horizontal scroll */
+  width: 90%;
+  scroll-snap-type: x mandatory;
 }
 
-.serv{
-
-  width: 45vw;
-  /* background-color: pink; */
+/* Each service card */
+.serv {
+  flex: 0 0 40vw; /* preserve your width */
   margin-top: 4vw;
   border-radius: 8px;
   display: flex;
   flex-direction: row;
-  border-radius: 8px;
   padding: 10px;
-  border-style: solid;
-  border-color: var(--primary-color);
+  border: 2px solid transparent;
+  scroll-snap-align: start;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
 }
 
-.serv-desc{
+.serv:hover{
+  border: 2px solid var(--primary-color);
+
+}
+
+/* Service description styling */
+.serv-desc {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-right: 10vw;
 }
 
 .serv-desc p {
   width: 80%;
+  color: var(--subtext-color);
 }
 
-.serv-ex{
+.serv h3{
+  font-size: 2rem;
+}
+
+
+/* Video container */
+.serv-ex {
   display: flex;
   align-items: center;
 }
 
-
-.serv-ex video{
-  /* height: 8%; */
+.serv-ex video {
   width: 80%;
   border-radius: 8px;
+  object-fit: cover;
 }
 
-
-.horizontal{
-  /* margin: 0; */
+/* Horizontal layout overrides */
+/* .horizontal {
   flex-direction: column;
-}
+} 
+
 .horizontal * video {
   width: 100%;
   margin-top: 4vh;
 }
 
-.horizontal .serv-desc{
-  margin-top: 2vh;
+.horizontal .serv-desc {
+  margin-top: 2vh; 
+}*/
+
+/* Scroll buttons */
+.scroll-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
+
+.scroll-btn:hover {
+  background: #1f3970;
+}
+
+/* Optional: drag cursor */
+#serv-box {
+  cursor: grab;
+}
+
+#serv-box.active {
+  cursor: grabbing;
+}
+
 /* BALLS ANIMATION */
 @keyframes move {
   100% {
