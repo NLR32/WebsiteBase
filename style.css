@@ -95,7 +95,7 @@ body{
   display: flex;
   flex-direction: column;
   z-index: 998;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 
@@ -113,9 +113,9 @@ body{
 #left-title{
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 50vw;
   text-align: left;
-  padding-right: 20px;
+  padding-right: 10px;
 }
 #right-title{
   display: flex;
@@ -132,7 +132,8 @@ body{
 #title-img{
   width: 50rem;
   height: 50rem;
-  /* padding: 3rem; */
+  position: relative;
+  top: 5vh;
 
 }
 
@@ -140,7 +141,16 @@ h1{
   color: white;
   margin-top: 10rem;
   font-size: 5rem;
+  /* transition: 700ms ease; */
+  
+  /* letter-spacing: -3px; */
+
+  
 }
+
+/* h1:hover{
+  letter-spacing: 1px;
+} */
 
 p{
   color: white;
@@ -162,6 +172,8 @@ p{
   font-weight: bold;
   font-size: 1rem;
   opacity: 80%;
+  position: relative;
+  left: 1vw;
 }
 .click:hover{
   color:  #110911;
@@ -203,7 +215,7 @@ p{
   color: var(--primary-color);
 }
 #about-us p{
-  width: 60%;
+  width: 65%;
   align-self: center;
   line-height: 2.5rem;
   font-size: 1rem;
@@ -447,7 +459,7 @@ h4{
   background: #1f3970;
 }
 
-/* Optional: drag cursor */
+
 #serv-box {
   cursor: grab;
 }
@@ -456,6 +468,93 @@ h4{
   cursor: grabbing;
 }
 
+
+/* Contact Us */
+#contact{
+  
+  height: 60vh;
+  padding-top: 30vh;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact-box{
+
+  /* height: 40vh; */
+  border-radius: 8px;
+  border-style: solid;
+  border-color: var(--text-color);
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+
+
+}
+
+#contact-company-info{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5vh;
+}
+
+#long-logo{
+  height: 20vh;
+}
+
+#email{
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+  left: 5vh;
+  font-size: 1.25rem;
+}
+
+#mail-add {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+  left: 5vh;
+
+}
+
+#mail-add:hover{
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+#contact-links{
+  padding-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  padding-right: 5vw;;
+}
+
+#contact-links a{
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+#contact-links a:hover{
+  color: var(--subtext-color);
+  text-decoration: underline;
+}
+
+hr {
+  width:90%; 
+  margin-top: 5vh;
+  height:1px; 
+  border-color: var(--subtext-color);
+}
+
+#contact h5{
+  color: var(--subtext-color);
+  padding-bottom: 2vh;
+}
 /* BALLS ANIMATION */
 @keyframes move {
   100% {
