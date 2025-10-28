@@ -10,13 +10,13 @@
 body{
   background-color: var(--background-color); ;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: lemon-sans-next, sans-serif;
 }
-
 
 /* NAVBAR */
 #navbar {
@@ -42,9 +42,6 @@ body{
   color: var(--text-color);
   text-decoration: none;
 }
-
-
-
 
 #navbar a:hover {
   color: var(--primary-color);
@@ -84,6 +81,7 @@ body{
   overflow: hidden;
 
 }
+
 /* TITLE SECTION */
 #front-page{
   position: absolute;
@@ -99,17 +97,15 @@ body{
   align-items: center;
 }
 
-
 #title-box{
-
   display: flex;
   flex-direction: row;
   width: 70%;
   justify-content: space-around;
   align-items: flex-end;
   margin-left: 10vw;
-  
 }
+
 #left-title{
   display: flex;
   flex-direction: column;
@@ -117,6 +113,7 @@ body{
   text-align: left;
   padding-right: 10px;
 }
+
 #right-title{
   display: flex;
   align-items: center;
@@ -127,7 +124,6 @@ body{
   justify-self: flex-end;
 
 }
-
 
 #title-img{
   width: 50rem;
@@ -182,14 +178,9 @@ p{
   transform: translateY(-2px);
   border-style: none;
   opacity: 100%;
-
-  
-
 }
 
-
 /* ABOUT US */
-
 #about-us{
   display: flex;
   flex-direction: column;
@@ -199,46 +190,46 @@ p{
   height: 80vh;
   align-items: center;
   padding-top: 2vh;
-
 }
 
 #about-us h2{
   text-align: center;
   font-weight: bold;
   width: 80%;
-
 }
+
 #about-us h4 {
   font-size: 2rem;
   text-align: center;
   width: 50%;
   color: var(--primary-color);
 }
+
 #about-us p{
   width: 65%;
   align-self: center;
   line-height: 2.5rem;
   font-size: 1rem;
   padding-top: 8vh;
-  
 }
+
 .small-text{
   font-size: 2rem;
   color: var(--subtext-color);
 }
+
 .glow{
   box-shadow: 0 0 100px var(--primary-color);
   background: rgb(47, 80, 152, .4);
   border-radius: 50%;
   padding: .25rem;
-  /* color: var(--primary-color); */
 }
-.highlight{
 
+.highlight{
   color: var(--primary-color);
   font-weight: bold;
-  /* font-size: 2rem; */
 }
+
 /* TESTIMONIALS */
 #testimonials {
   z-index: 2;
@@ -251,7 +242,6 @@ p{
   padding: 0;
   margin-top: 15vh;
   margin-bottom: 10vh;
-  
 }
 
 header {
@@ -267,8 +257,6 @@ header {
   justify-content: center;
   font-weight: bold;
   box-shadow: 0 0 100px var(--primary-color);
-  
-
 }
 
 h2{
@@ -284,12 +272,10 @@ h2{
   justify-content: space-evenly;
   padding-top: 4vw;
   padding-bottom: 4vw;
-
 }
-.test{
 
+.test{
   border-radius: 8px;
-  /* border-style: solid; */
   border-color: var(--text-color);
   color: var(--text-color);
   display: flex;
@@ -298,17 +284,12 @@ h2{
   background-color:  var(--background-color);
   width: 25vw;
   align-items: center;
-
-
 }
 
 .test p {
-  /* width: 80%; */
   margin: 15px;
   font-size: 1rem;
-  /* line-height: 2rem; */
   font-weight: 100;
-
 }
 
 .test-attr{
@@ -320,32 +301,28 @@ h2{
   justify-content: flex-start;
   align-items: center;
   padding-left: 20px;
-
-
-  
 }
+
 .test-attr img{
   width: 5vw;
   height: 5vw;
   padding-right: 10px;
 }
+
 .test-person{
-  /* padding-top: 1vw; */
   display: flex;
   flex-direction: column;
 }
+
 h3{
   color:var(--text-color);
-  /* font-weight: 100; */
 }
+
 h4{
   color:var(--subtext-color);
-  /* font-weight: 100; */
 }
 
-
-
-/* Services Section */
+/* SERVICES */
 #services {
   background: var(--background-color);
   color: var(--text-color);
@@ -366,7 +343,7 @@ h4{
   width: 100%;
 }
 
-/* Flex container for service boxes */
+
 #serv-box {
   display: flex;
   flex-direction: row;
@@ -374,14 +351,13 @@ h4{
   scroll-behavior: smooth;
   gap: 20px;
   padding: 10px 0;
-  flex-wrap: nowrap; /* prevent wrapping for horizontal scroll */
+  flex-wrap: nowrap; 
   width: 90%;
   scroll-snap-type: x mandatory;
 }
 
-/* Each service card */
 .serv {
-  flex: 0 0 40vw; /* preserve your width */
+  flex: 0 0 40vw; 
   margin-top: 4vw;
   border-radius: 8px;
   display: flex;
@@ -390,15 +366,12 @@ h4{
   border: 2px solid transparent;
   scroll-snap-align: start;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-
 }
 
 .serv:hover{
   border: 2px solid var(--primary-color);
-
 }
 
-/* Service description styling */
 .serv-desc {
   display: flex;
   flex-direction: column;
@@ -416,7 +389,6 @@ h4{
   font-size: 2rem;
 }
 
-
 /* Video container */
 .serv-ex {
   display: flex;
@@ -428,20 +400,6 @@ h4{
   border-radius: 8px;
   object-fit: cover;
 }
-
-/* Horizontal layout overrides */
-/* .horizontal {
-  flex-direction: column;
-} 
-
-.horizontal * video {
-  width: 100%;
-  margin-top: 4vh;
-}
-
-.horizontal .serv-desc {
-  margin-top: 2vh; 
-}*/
 
 /* Scroll buttons */
 .scroll-btn {
@@ -459,7 +417,6 @@ h4{
   background: #1f3970;
 }
 
-
 #serv-box {
   cursor: grab;
 }
@@ -468,10 +425,8 @@ h4{
   cursor: grabbing;
 }
 
-
 /* Contact Us */
-#contact{
-  
+#contact{ 
   height: 60vh;
   padding-top: 30vh;
   background-color: var(--background-color);
@@ -481,8 +436,6 @@ h4{
 }
 
 #contact-box{
-
-  /* height: 40vh; */
   border-radius: 8px;
   border-style: solid;
   border-color: var(--text-color);
@@ -490,9 +443,6 @@ h4{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
-
-
 }
 
 #contact-company-info{
@@ -510,16 +460,15 @@ h4{
   text-decoration: none;
   position: relative;
   left: 5vh;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 #mail-add {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: var(--text-color);
   text-decoration: none;
   position: relative;
   left: 5vh;
-
 }
 
 #mail-add:hover{
