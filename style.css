@@ -3,8 +3,9 @@
   --secondary-color: #161f63;
   --text-color: #ffffff;
   --subtext-color: #6d6d6d;
-  --background-color: rgb(17, 9, 9);
+  --background-color: #110909;
   --subbackground-color: #222225;
+  --border-radius: 30px;
 }
 
 body{
@@ -26,13 +27,11 @@ body{
   width: 100%;
   height: 100px;
   background: none;
-
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 0 50px;
   color: white;
-  /* width: 35vw; */
   z-index: 9999;
   font-weight: bold;
 }
@@ -45,7 +44,6 @@ body{
 
 #navbar a:hover {
   color: var(--primary-color);
-  /* border-bottom: ; */
 }
 
 #Brand {
@@ -77,7 +75,6 @@ body{
   width: 100vw;
   height: 100vh; 
   background-color: var(--background-color);
-
   overflow: hidden;
 
 }
@@ -118,7 +115,7 @@ body{
   display: flex;
   align-items: center;
   /* border-style: solid; */
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   border-color: var(--primary-color);
   height: 80%;
   justify-self: flex-end;
@@ -156,29 +153,37 @@ p{
 
 }
 .click{
-  margin-top: 2.5rem;
-  width: 10rem;
-  height: 2.5rem;
-  border-radius: 8px;
+  margin-top: 4rem;
+  width: 16rem;
+  height: 3.5rem;
+  border-radius: var(--border-radius);
   border-style: solid;
   background-color: transparent;
   color: white;
   border-color: white;
   transition: all 400ms cubic-bezier(.23, 1, 0.32, 1);
   font-weight: bold;
-  font-size: 1rem;
-  opacity: 80%;
-  position: relative;
-  left: 1vw;
+  font-size: 1.25rem;
+  /* letter-spacing: .25rem; */
+  /* opacity: 80%; */
+  /* position: relative; */
+  /* left: 1vw; */
 }
 .click:hover{
-  color:  #110911;
+  /* color:  #110911; */
   background-color: var(--primary-color);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
   border-style: none;
   opacity: 100%;
 }
+
+.click a {
+  color: white;
+  text-decoration: none;
+}
+
+
 
 /* ABOUT US */
 #about-us{
@@ -249,7 +254,7 @@ header {
   height: 2.5rem;
   color: var(--text-color);
   border-color: var(--primary-color);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   border-style: solid;
   font-size: 1rem;
   display: flex;
@@ -275,7 +280,7 @@ h2{
 }
 
 .test{
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   border-color: var(--text-color);
   color: var(--text-color);
   display: flex;
@@ -359,7 +364,7 @@ h4{
 .serv {
   flex: 0 0 40vw; 
   margin-top: 4vw;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   display: flex;
   flex-direction: row;
   padding: 10px;
@@ -397,7 +402,7 @@ h4{
 
 .serv-ex video {
   width: 80%;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   object-fit: cover;
 }
 
@@ -425,10 +430,50 @@ h4{
   cursor: grabbing;
 }
 
+/* Join Us */
+.join-us {
+
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+
+
+  /* border-top: 3px solid rgba(255, 255, 255, 0.1); */
+}
+
+.join-us h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.join-us p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.join-btn {
+  background: var(--text-color);
+  color: var(--primary-color);
+  padding: 12px 30px;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
 /* Contact Us */
 #contact{ 
   height: 60vh;
-  padding-top: 30vh;
+  padding-top: 5vh;
   background-color: var(--background-color);
   display: flex;
   flex-direction: column;
@@ -436,7 +481,7 @@ h4{
 }
 
 #contact-box{
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   border-style: solid;
   border-color: var(--text-color);
   width: 80vw;
