@@ -1,4 +1,4 @@
-const container = document.getElementById('serv-box');
+  const container = document.getElementById('serv-box');
   const leftBtn = document.getElementById('left');
   const rightBtn = document.getElementById('right');
 
@@ -34,4 +34,19 @@ const container = document.getElementById('serv-box');
     const x = e.pageX - container.offsetLeft;
     const walk = (x - startX) * 2; // scroll speed
     container.scrollLeft = scrollLeft - walk;
+  });
+
+
+
+
+  document.querySelectorAll(".click").forEach(button => {
+    button.addEventListener("click", () => {
+      window.location.href = "mailto:ari@clipsalt.com";
+    });
+  });
+
+  document.querySelectorAll(".join-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      window.location.href = "mailto:ari@clipsalt.com";
+    });
   });

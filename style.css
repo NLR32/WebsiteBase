@@ -164,6 +164,8 @@ p{
   transition: all 400ms cubic-bezier(.23, 1, 0.32, 1);
   font-weight: bold;
   font-size: 1.25rem;
+  cursor: pointer;
+
   /* letter-spacing: .25rem; */
   /* opacity: 80%; */
   /* position: relative; */
@@ -179,6 +181,9 @@ p{
 }
 
 .click a {
+  width: 16rem;
+  height: 3.5rem;
+  border-radius: var(--border-radius);
   color: white;
   text-decoration: none;
 }
