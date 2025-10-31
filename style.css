@@ -767,3 +767,208 @@ hr {
   /* min-height: 100vh; */
 }
 
+
+
+/* ---------- MOBILE RESPONSIVE ADJUSTMENTS ---------- */
+@media (max-width: 800px) {
+
+  /* GENERAL RESET */
+  body {
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-top: 30vh;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+    width: 90%;
+    text-align: center;
+    margin: 1rem auto;
+  }
+
+  button.click, .click a {
+    
+    min-height: fit-content;
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+  /* NAVBAR */
+  #navbar {
+    position: absolute;
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+  }
+
+  #navbar a {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+
+  /* FRONT PAGE */
+  #title-box {
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #left-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  #right-title {
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  #title-img {
+    width: 80%;
+    height: auto;
+    top: 0;
+  }
+
+  /* ABOUT US */
+  #about-box {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+  #about-right{
+    display: flex;
+    justify-content: center;
+  }
+
+  #outer-headings, #about-right {
+    width: 100%;
+  }
+
+  .small-text {
+    font-size: 1.75rem;
+  }
+
+  .glow {
+    font-size: 2rem;
+  }
+
+  #glow-ball {
+    display: none; /* optional for clarity on small screens */
+  }
+
+  /* SERVICES */
+  .scroll-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #serv-box {
+    flex-direction: column;
+    overflow-x: hidden;
+    width: 100%;
+    align-items: center;
+  }
+
+  .serv {
+    flex-direction: column;
+    width: 90%;
+    margin: 20px 0;
+  }
+
+  .serv-desc {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .serv-ex video {
+    width: 90%;
+    height: auto;
+  }
+
+  .scroll-btn {
+    display: none;
+  }
+
+  /* TESTIMONIALS */
+  #test-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .test {
+    width: 90%;
+  }
+
+  .test-attr img {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  /* JOIN US */
+  #join-us {
+    padding: 40px 20px;
+  }
+
+  #join-us h2 {
+    font-size: 1.75rem;
+  }
+
+  #join-us p {
+    font-size: 1rem;
+  }
+
+  /* CONTACT */
+  #contact-box {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    text-align: center;
+  }
+
+  #contact-company-info {
+    align-items: center;
+  }
+
+  #long-logo {
+    height: 10vh;
+  }
+
+  #email, #mail-add {
+    left: 0;
+    position: static;
+  }
+
+  #contact-links {
+    padding: 0;
+    align-items: center;
+  }
+
+  #contact-links a {
+    margin: 5px 0;
+  }
+
+  hr {
+    width: 80%;
+  }
+}
