@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
     <title>ClipSalt</title>
 </head>
 <body>
-
-    <nav id="navbar">
   
+    <div id="nav-cont">
+    <nav id="navbar">
+      <img src="/icons/logo-long.svg" alt="logo">
       <a href="#about-us">About Us</a>
-      <a href="#services">Services</a> 
-      <a href="#testimonials">Testimonials</a>
-      <a href="join-us">Contact</a>
-        
+      <a href="#short-form">Services</a>
+      <a href="#FAQ">FAQ</a>
+      <button class="click hov mail">Get in Touch</button>
     </nav>
+  </div>
 
     <div class="background">
         <span class="ball"></span>
@@ -29,15 +34,31 @@
     </div>
     <div id="front-page">
         <div id="title-box">
-            <div id="left-title">
-                <h1>Short-Form Content Lives in Your World </h1>
-                <button class="click">Get in Touch</button>
+            <div id="pre-title">
+              <div id="stars">
+                <img src="icons/star-white.svg"></img>
+                <img src="icons/star-white.svg"></img> <img src="icons/star-white.svg"></img> <img src="icons/star-white.svg"></img> <img src="icons/star-white.svg"></img>
+              </div>
+              <h4>Thousands of videos edited</h4>
             </div>
-            <div id="right-title">
-                <img id="title-img" src="icons/logo.svg" alt="ClipSalt">
+            <div id="title"> 
+              <h1>
+                #1 Content Editing Stuido <br>
+                <span class="highlight">
+                Make Short-Form Content Live in Your World
+                </span>
+              </h1>
+              <div id="sub-title">
+                <h2>With ClipSalt, your short-form content isn’t just seen, it connects, educates, and leaves a lasting impression.</h2>
+
+              </div>
+
             </div>
-            
-          </div>
+
+            <div id="title-opts">
+              <button class="click hov mail"> Get in Touch </button>
+              <button class="click sub-btn"> Learn More</button>
+            </div>
         </div>
     </div>
     
@@ -74,14 +95,14 @@
     </section>
 
    
-      <section class="content" id="services">
-        <header>Services</header>
+      <section class="services" id="short-form">
+        <header>Short Form Content</header>
         
         <div class="scroll-wrapper">
-          <button id="left" class="scroll-btn">←</button>
+          <button  id="s-left" class="scroll-btn ">←</button>
           
           <div id="serv-box">
-            <div class="serv">
+            <div class="serv shorts">
               <div class="serv-desc">
                 <h3>News/Education</h3>
                 <p>Quickly teach your audience. Clearly and effectivley communicate complicated ideas concisely.</p>
@@ -90,8 +111,18 @@
                 <video src="video/edu-vid.mp4" autoplay muted loop playsinline></video>
               </div>
             </div>
+
+            <div class="serv shorts">
+              <div class="serv-desc">
+                <h3>Animated Content</h3>
+                <p>Use animation to show off your content. Explore new mediums for your audience</p>
+              </div>
+              <div class="serv-ex">
+                <video src="video/saas-vid.mp4" autoplay muted loop playsinline></video>
+              </div>
+            </div>
       
-            <div class="serv">
+            <div class="serv shorts">
               <div class="serv-desc">
                 <h3>Podcast Reels</h3>
                 <p>Transform long-form podcast content into digestible shor-form pieces. Expand vectors of engagement.</p>
@@ -100,8 +131,18 @@
                 <video src="video/Molly Jong Fast.mp4" autoplay muted loop playsinline></video>
               </div>
             </div>
+
+            <div class="serv shorts">
+              <div class="serv-desc">
+                <h3>Zoom Production</h3>
+                <p>Get production done remotley. Streamline your production process.</p>
+              </div>
+              <div class="serv-ex">
+                <!-- <video src="video/saas-vid.mp4" autoplay muted loop playsinline></video> -->
+              </div>
+            </div>
       
-            <div class="serv">
+            <div class="serv shorts">
               <div class="serv-desc">
                 <h3>Talking Head Reels</h3>
                 <p>Enhance conversational content into distilled videos for your audience and new viewers.</p>
@@ -111,7 +152,7 @@
               </div>
             </div>
       
-            <div class="serv">
+            <div class="serv shorts">
               <div class="serv-desc">
                 <h3>Podcast Production</h3>
                 <p>Riverside, Online or in studio production, multicam capabilities.</p>
@@ -121,21 +162,55 @@
               </div>
             </div>
       
-            <div class="serv horizontal">
-              <div class="serv-desc">
-                <h3>SaaS Product Explainers</h3>
-                <p>Explain your product clearly. Attract new users and asist exisiting customers.</p>
-              </div>
-              <div class="serv-ex">
-                <video src="video/saas-vid.mp4" autoplay muted loop playsinline></video>
-              </div>
-            </div>
+           
           </div>
       
-          <button id="right" class="scroll-btn">→</button>
+          <button id="s-right" class="scroll-btn ">→</button>
         </div>
 
-        <button class="click"><a  href="mailto:ari@clipsalt.com">Reuest A Service</a></button>
+        <button class="click mail">Explore Pricing</button>
+      </section>
+
+      <section class="content" id="long-form">
+        <header>Long Form Content</header>
+        <div id="grid">
+          <div class="serv longs active">
+            <div class="serv-desc">
+              <h3>Podcast Production</h3>
+              <p>Riverside, Online or in studio production, multicam capabilities.</p>
+            </div>
+            <div class="serv-ex">
+              <video src="video/pod-vid.mp4" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+          <div class="serv longs active">
+            <div class="serv-desc">
+              <h3>Podcast Production</h3>
+              <p>Riverside, Online or in studio production, multicam capabilities.</p>
+            </div>
+            <div class="serv-ex">
+              <video src="video/pod-vid.mp4" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+          <div class="serv longs active">
+            <div class="serv-desc">
+              <h3>Podcast Production</h3>
+              <p>Riverside, Onlne or in studio production, multicam capabilities.</p>
+            </div>
+            <div class="serv-ex">
+              <video src="video/pod-vid.mp4" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+          <div class="serv longs active">
+            <div class="serv-desc">
+              <h3>Podcast Production</h3>
+              <p>Riverside, Online or in studio production, multicam capabilities.</p>
+            </div>
+            <div class="serv-ex">
+              <video src="video/pod-vid.mp4" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+        </div>
       </section>
       <section class="content" id="testimonials">
         <header>Testimonials</header>
@@ -188,7 +263,7 @@
       <section id="join-us">
         <h2>Join Us</h2>
         <p>Be part of our journey - breathe life into your content</p>
-        <a href="#contact" class="join-btn"> Work With Us</a>
+        <a href="#contact" class="mail join-btn"> Work With Us</a>
       </section>
       
       <section class="content" id="contact">
@@ -203,7 +278,7 @@
           </div>
           <div id="contact-links">
             <a href="#about-us">About Us</a>
-            <a href="#services">Services</a> 
+            <a href="#services">Short Form Content</a> 
             <a href="#testimonials">Testimonials</a>
           </div>
           
