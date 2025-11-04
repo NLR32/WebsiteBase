@@ -1,4 +1,28 @@
+// CURSOR FOLLOWING
+const cursor = document.getElementById("cursor");
 
+document.addEventListener("mousemove", (event) => {
+  const x = event.clientX-5;
+  const y = event.clientY-5;
+
+
+  cursor.style.left = `${x}px`;
+  cursor.style.top = `${y}px`;
+  // console.log(cursor.style.left)
+
+  if (event.target.tagName.toLowerCase() === "button") {
+    cursor.style.backgroundColor = "black";
+    cursor.style.width = "10px"
+    cursor.style.height = "10px"
+    console.log("button")
+  } else {
+    cursor.style.backgroundColor = "var(--primary-color)";
+    cursor.style.width = "15px"
+    cursor.style.height = "15px"
+  }
+});
+
+// SHORTS GALLERY
 const servs = document.querySelectorAll(".shorts");
 const leftBtn = document.getElementById("s-left");
 const rightBtn = document.getElementById("s-right");

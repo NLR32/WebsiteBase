@@ -1,25 +1,40 @@
 :root {
   --primary-color: #8b54ff;
-  --secondary-color: #52319a;
+  --secondary-color: #7546dc;
   --text-color: #ffffff;
-  --subtext-color: #6d6d6d;
+  --subtext-color: #bfbdbd;
   --background-color: #110909;
   --subbackground-color: #222225;
   --border-radius: 12px;
+
+  
 }
 
 body{
-  background-color: var(--background-color); ;
+  background-color: var(--background-color); 
  
+  
 }
 
-
+#cursor {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  transition:
+  background-color 0.6s ease,
+  width 0.6s ease,
+  height 0.6s ease;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 /* NAVBAR */
@@ -35,7 +50,7 @@ body{
   align-items: center;
   padding: 0 20px;
   color: white;
-  z-index: 9999;
+  z-index: 9998;
   border-radius: var(--border-radius);
   border-style: solid;
   /* font-weight: bold; */
@@ -85,7 +100,7 @@ body{
   border-style: none;
   opacity: 100%;
   color: black;
-  font-weight: bold;
+  font-weight: 300;
 }
 
 .click.hov {
@@ -185,10 +200,9 @@ h1{
 
 p{
   color: white;
-  margin-top: 2.5rem;
+  /* margin-top: 2.5rem; */
   font-size: 1rem;
   line-height: 1.5rem;
-
 }
 .click{
   margin-top: 4rem;
@@ -202,7 +216,7 @@ p{
   transition: all 400ms cubic-bezier(.23, 1, 0.32, 1);
   font-weight: bold;
   font-size: 1.25rem;
-  cursor: pointer;
+  /* cursor: pointer; */
 
   /* letter-spacing: .25rem; */
   /* opacity: 80%; */
@@ -387,21 +401,12 @@ p{
 
   font-weight: bold;
 }
-
-/* TESTIMONIALS */
-#testimonials {
-  z-index: 2;
-  background: var(--background-color);
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0;
-  margin-top: 15vh;
-  margin-bottom: 10vh;
+h2{
+  
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--subtext-color);
 }
-
 header {
   margin-top: 10vh;
   width: 11rem;
@@ -417,13 +422,23 @@ header {
   font-weight: bold;
   box-shadow: 0 0 100px var(--primary-color);
 }
-
-h2{
-  
-  font-size: 1.3rem;
-  font-weight: 300;
-  color: var(--subtext-color);
+/* TESTIMONIALS
+#testimonials {
+  z-index: 2;
+  background: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin-top: 15vh;
+  margin-bottom: 10vh;
 }
+
+
+
+
 
 #test-box{
   width: 100vw;
@@ -472,7 +487,7 @@ h2{
 .test-person{
   display: flex;
   flex-direction: column;
-}
+} */
 
 h3{
   color:var(--text-color);
@@ -666,6 +681,8 @@ h4{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
+
 }
 
 #contact-box{
@@ -673,6 +690,7 @@ h4{
   border-style: solid;
   border-color: var(--text-color);
   width: 80vw;
+  height: 165px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -681,18 +699,19 @@ h4{
 #contact-company-info{
   display: flex;
   flex-direction: column;
-  padding-bottom: 5vh;
+  padding-bottom: 1vh;
+  /* justify-content: space-evenly; */
 }
 
 #long-logo{
-  height: 20vh;
+  height: 10vh;
 }
 
 #email{
   color: var(--text-color);
   text-decoration: none;
   position: relative;
-  left: 5vh;
+  left: 2vh;
   font-size: 1rem;
 }
 
@@ -701,7 +720,7 @@ h4{
   color: var(--text-color);
   text-decoration: none;
   position: relative;
-  left: 5vh;
+  left: 2vh;
 }
 
 #mail-add:hover{
@@ -710,10 +729,12 @@ h4{
 }
 
 #contact-links{
-  padding-top: 5vh;
+
   display: flex;
   flex-direction: column;
-  padding-right: 5vw;;
+  padding-right: 1vw;
+  padding-top: 2vh;
+
 }
 
 #contact-links a{
@@ -863,6 +884,7 @@ hr {
     font-size: 2.5rem;
     margin-top: 30vh;
     text-align: center;
+    
   }
 
   h2 {
@@ -1075,6 +1097,8 @@ hr {
   #contact-links {
     padding: 0;
     align-items: center;
+    /* padding-top: 2vh; */
+
   }
 
   #contact-links a {
