@@ -1,11 +1,11 @@
 :root {
-  --primary-color: #fddf1e;
-  --secondary-color: #89790f;
+  --primary-color: #8b54ff;
+  --secondary-color: #52319a;
   --text-color: #ffffff;
   --subtext-color: #6d6d6d;
   --background-color: #110909;
   --subbackground-color: #222225;
-  --border-radius: 30px;
+  --border-radius: 12px;
 }
 
 body{
@@ -74,7 +74,7 @@ body{
 
 #navbar .click {
   font-size: 1rem;
-  width: 107px;
+  width: 115px;
   height: 31px;
   padding: 0;
   margin: 0;
@@ -527,6 +527,13 @@ h4{
   visibility: hidden;
   width: 80vw;
 
+   opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
 
 }
 
@@ -747,14 +754,22 @@ hr {
   z-index: 1;
 }
 
-.ball:nth-child(odd) {
-  color: var(--primary-color);
+/* .ball:nth-child(odd) {
+  background: rad-gradient(#c9bfff 0deg, #139ce5 180deg, #9381ff 360deg);
+    filter: blur(15px);
 }
 
 .ball:nth-child(even) {
-  color: var(--primary-color);
+  background: conic-gradient(#c9bfff 0deg, #139ce5 180deg, #9381ff 360deg);
+  filter: blur(15px);
   
-}
+} */
+ .ball{
+  /* background:radial-gradient(#c9bfff 0%, #139ce5 70%, #9381ff 75%); */
+    /* background: linear-gradient(#c9bfff , #139ce5 , #9381ff ); */
+    background: conic-gradient(#c9bfff 0deg, #139ce5 120deg, #9381ff 360deg);
+    filter: blur(15px);
+ }
 
 /* Individual Ball Configurations */
 .ball:nth-child(1) {
@@ -763,7 +778,7 @@ hr {
   animation-duration: 18s;
   animation-delay: -3s;
   transform-origin: 16vw -2vh;
-  box-shadow: 40vmin 0 5.703076368487546vmin currentColor;
+  /* box-shadow: 40vmin 0 5.703076368487546vmin currentColor; */
 }
 .ball:nth-child(2) {
   top: 42%;
@@ -771,7 +786,7 @@ hr {
   animation-duration: 16s;
   animation-delay: -29s;
   transform-origin: -12vw 18vh;
-  box-shadow: -40vmin 0 5.17594621519026vmin currentColor;
+  /* box-shadow: -40vmin 0 5.17594621519026vmin currentColor; */
 }
 .ball:nth-child(3) {
   top: 28%;
@@ -779,7 +794,7 @@ hr {
   animation-duration: 28s;
   animation-delay: -2s;
   transform-origin: -15vw 3vh;
-  box-shadow: 40vmin 0 5.248179047256236vmin currentColor;
+  /* box-shadow: 40vmin 0 5.248179047256236vmin currentColor; */
 }
 .ball:nth-child(4) {
   top: 50%;
@@ -787,7 +802,7 @@ hr {
   animation-duration: 42s;
   animation-delay: -7s;
   transform-origin: -13vw -6vh;
-  box-shadow: 40vmin 0 5.279749632220298vmin currentColor;
+  /* box-shadow: 40vmin 0 5.279749632220298vmin currentColor; */
 }
 .ball:nth-child(5) {
   top: 46%;
@@ -795,7 +810,7 @@ hr {
   animation-duration: 48s;
   animation-delay: -20s;
   transform-origin: 4vw 0vh;
-  box-shadow: -40vmin 0 5.964309466052033vmin currentColor;
+  /* box-shadow: -40vmin 0 5.964309466052033vmin currentColor; */
 }
 .ball:nth-child(6) {
   top: 77%;
@@ -803,7 +818,7 @@ hr {
   animation-duration: 32s;
   animation-delay: -5s;
   transform-origin: 18vw 4vh;
-  box-shadow: 40vmin 0 5.178483653434181vmin currentColor;
+  /* box-shadow: 40vmin 0 5.178483653434181vmin currentColor; */
 }
 .ball:nth-child(7) {
   top: 22%;
@@ -811,7 +826,7 @@ hr {
   animation-duration: 45s;
   animation-delay: -3s;
   transform-origin: 1vw -20vh;
-  box-shadow: -40vmin 0 5.703026794398318vmin currentColor;
+  /* box-shadow: -40vmin 0 5.703026794398318vmin currentColor; */
 }
 .ball:nth-child(8) {
   top: 41%;
@@ -819,7 +834,7 @@ hr {
   animation-duration: 50s;
   animation-delay: -15s;
   transform-origin: 20vw -3vh;
-  box-shadow: 40vmin 0 5.196265905749415vmin currentColor;
+  /* box-shadow: 40vmin 0 5.196265905749415vmin currentColor; */
 }
 
 /* SCROLLABLE CONTENT */
@@ -942,7 +957,7 @@ hr {
   }
 
   #glow-ball {
-    display: none; /* optional for clarity on small screens */
+    background: conic-gradient(#c9bfff 0deg,#139ce5 180deg,#9381ff 360deg);
   }
 
   /* SERVICES */
@@ -970,6 +985,12 @@ hr {
     margin: 20px 0;
     display: none; /* hide all by default */
     align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
   }
   .serv.active {
     display: flex; /* only active one shows */
