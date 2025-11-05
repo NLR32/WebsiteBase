@@ -337,6 +337,7 @@ p{
   justify-content: center;
   align-items: center;   
   margin-top: 4vh;
+  text-align: center;
 
 }
 #inner-headings{
@@ -379,6 +380,7 @@ p{
   color: var(--text-color);
   animation: animation 20s ease infinite;
   font-size: 3.5rem;
+  
   /* animation: animation 10 ease infinite;
   position: relative;
   text-align: center; */
@@ -678,11 +680,12 @@ h4{
 }
 
 #compare-box{
-  margin-top: 10vh;
+
   display: flex;
   flex-direction: row;
   gap: 5vw;
-  margin-top: 10vh;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
 
 }
 
