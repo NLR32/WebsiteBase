@@ -66,13 +66,14 @@ document.querySelectorAll(".sub-btn").forEach(button => {
   });
 
  
-// SCROLLING
-  let scrollPosition = 0;
-  const scrollSpeed = 0.8; // Adjust for desired slowness
+// // SCROLLING
+//   let scrollPosition = 0;
+//   const scrollSpeed = 0.8; // Adjust for desired slowness
 
-  window.addEventListener('wheel', (e) => {
-      e.preventDefault(); // Prevent default scroll
+//   window.addEventListener('wheel', (e) => {
+//       e.preventDefault(); // Prevent default scroll
 
-      scrollPosition += e.deltaY * scrollSpeed;
-      window.scrollTo(0, scrollPosition);
-  }, { passive: false });
+//       scrollPosition += e.deltaY * scrollSpeed;
+//       window.scrollTo(0, scrollPosition);
+//   }, { passive: false });
+
