@@ -1233,6 +1233,8 @@ hr {
 
   .scroll-btn {
     /* display: none; */
+    padding: 5px;
+    margin: 5px;
   }
 
   #grid {
