@@ -46,7 +46,7 @@ rightBtn.addEventListener("click", () => showServ(currentIndex + 1));
 //jump by button
 document.querySelectorAll(".sub-btn").forEach(button => {
   button.addEventListener("click", () => {
-    const targetElement = document.getElementById("short-form");
+    const targetElement = document.getElementById("about-us");
     if (targetElement) {
       targetElement.scrollIntoView({
         behavior: 'smooth', // smooth scrolling animation

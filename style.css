@@ -6,14 +6,14 @@
   --background-color: #110909;
   --subbackground-color: #222225;
   --border-radius: 12px;
+  scroll-behavior: smooth;
 
   
 }
 
 body{
   background-color: var(--background-color); 
- 
-  
+
 }
 
 #cursor {
@@ -76,6 +76,7 @@ body{
   color: var(--text-color);
   text-decoration: none;
   margin: 10px;
+  
 }
 
 #navbar a:hover {
@@ -1066,213 +1067,247 @@ hr {
   /* box-shadow: 40vmin 0 5.196265905749415vmin currentColor; */
 }
 
-/* --------- MOBILE RESPONSIVE ADJUSTMENTS ---------- */
-@media (max-width: 800px) {
+/* ---------- MOBILE RESPONSIVE (under 800px) ---------- */
+@media screen and (max-width: 800px) {
 
-  /* GENERAL RESET */
   body {
     overflow-x: hidden;
   }
 
-  h1 {
-    font-size: 2.5rem;
-    margin-top: 30vh;
-    text-align: center;
-    
-  }
-
-  h2 {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  p {
-    font-size: 0.9rem;
-    line-height: 1.4rem;
-    width: 90%;
-    text-align: center;
-    margin: 1rem auto;
-  }
-
-  button.click, .click a {
-    
-    min-height: fit-content;
-    padding: 12px 30px;
-    font-size: 1rem;
-  }
-
   /* NAVBAR */
   #navbar {
-    position: absolute;
-    flex-direction: column;
+    flex-direction: row;
     height: auto;
-    padding: 10px 0;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
+    gap: 10px;
+    border: none;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
   }
 
-  #navbar a {
-    margin: 5px 0;
-    font-size: 1rem;
+  #navbar img {
+    width: 60px;
+    height: 60px;
+  }
+
+  #navbar a,
+  #navbar .click {
+    font-size: 0.9rem;
   }
 
   /* FRONT PAGE */
-  #title-box {
-    flex-direction: column;
-    width: 90%;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #left-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 0;
-  }
-
-  #right-title {
-    width: 100%;
-    justify-content: center;
-    margin-top: 2rem;
-  }
-
-  #title-img {
-    width: 80%;
+  #front-page {
     height: auto;
-    top: 0;
-  }
-  
-
-  /* SERVICES */
-  .scroll-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    position: relative;
-    height: fit-content;
-  }
-
-  #serv-box {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    width: 100%;
-    align-items: center;
-    
-  }
-
-  .serv {
-    flex-direction: column;
-    width: 90%;
-    margin: 20px 0;
-    display: none; /* hide all by default */
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.95);
-    transition:
-      opacity 0.4s ease,
-      transform 0.4s ease;
-  }
-  .serv.active {
-    display: flex; /* only active one shows */
-  }
-
-  .serv-desc {
-    padding-right: 0;
+    padding-top: 30vh;
+    padding-bottom: 10vh;
     text-align: center;
   }
 
-  .serv-ex video {
-    width: 24vh;
-    height: 40vh;
-  }
-
-  .serv-ex{
-    justify-content: center;
-  }
-
-  .scroll-btn {
-    display: block;
-    background: var(--primary-color);;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color:var(--text-color);
-    user-select: none;
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-
-  /* TESTIMONIALS */
-  #test-box {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .test {
+  #title-box {
     width: 90%;
   }
 
-  .test-attr img {
-    width: 10vw;
-    height: 10vw;
+  #title{
+    padding: 5vh;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 2.3rem;
   }
 
-  /* JOIN US */
-  #join-us {
-    padding: 40px 20px;
+  #sub-title {
+    width: 90%;
+    font-size: 0.95rem;
   }
 
-  #join-us h2 {
-    font-size: 1.75rem;
+  #title-opts {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
   }
 
-  #join-us p {
+  #title-opts button{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .click {
+    width: 80%;
+    height: 3rem;
     font-size: 1rem;
   }
 
-  /* CONTACT */
-  #contact-box {
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
+  /* ABOUT SECTION */
+  #about-us {
+    margin-top: 101vh;
+    padding: 10vh 5vw;
+  }
+
+  #about-right,
+  #outer-headings {
+    width: 100%;
     text-align: center;
   }
 
-  #contact-company-info {
+  #outer-headings h2 {
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
 
-  #long-logo {
-    height: 10vh;
+  #mini-grid {
+    flex-direction: column;
+    align-items: center;
   }
 
-  #email, #mail-add {
-    left: 0;
-    position: static;
+  .mini-box,
+  #mini-top,
+  #mini-right {
+    width: 100%;
+    margin: 2vh 0;
+    text-align: center;
+  }
+
+  .mini-emph h3 {
+    font-size: 1.8rem;
+
+  }
+
+  /* SERVICES */
+  .scroll-wrapper {
+    width: 95%;
+  }
+  #serv-box {
+    display: flex;
+  }
+  .serv {
+    width: 100%;
+    height: 100%;;               /* fill the #serv-box area */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  
+    /* invisible by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.98);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+    pointer-events: none;       /* prevent interaction with hidden slides */
+  }
+  
+  /* The one that should show */
+  .serv.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 2;
+    pointer-events: auto;
+  }
+  
+  /* Make video size adapt cleanly inside the stacked slide */
+  .serv-ex video {
+    width: 30vw;
+    height: 50vw;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+  }
+
+  .serv-desc {
+    width: 100%;
+    text-align: center;
+    
+  }
+
+  .serv-desc h3{
+    width: 30vw;
+    overflow-wrap: break-word;
+  }
+
+  .scroll-btn {
+    /* display: none; */
+  }
+
+  #grid {
+    gap: 10vh 10vh;
+  }
+
+.horizontal video {
+  width: 40vw;
+  height: 25vw;
+}
+
+  /* COMPARE SECTION */
+  #compare-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+  }
+
+  #compare-left,
+  #compare-right {
+
+    text-align: center;
+    align-items: center;
+   
+  }
+
+  #compare-right img {
+    /* width: 70%; */
+  }
+
+  .item-box{
+    height: auto;
+    width: 60vw;
+    
+  }
+
+  /* FAQ */
+  .faq-item {
+    width: 90%;
+  }
+
+  /* JOIN US + CONTACT */
+  #join-us {
+    padding: 10vh 5vw;
+    text-align: center;
+  }
+
+  #contact-box {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    height: fit-content;
+    padding: 5px;
   }
 
   #contact-links {
-    padding: 0;
-    align-items: center;
-    /* padding-top: 2vh; */
-
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   #contact-links a {
-    margin: 5px 0;
+    font-size: 0.95rem;
   }
 
-  hr {
-    width: 80%;
+  /* GENERAL TEXT */
+  h2, h3, h4, p {
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  header {
+    font-size: 0.9rem;
+    width: 9rem;
+    height: 2rem;
   }
 }
