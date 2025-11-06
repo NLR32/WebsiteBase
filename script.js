@@ -77,3 +77,30 @@ document.querySelectorAll(".sub-btn").forEach(button => {
 //       window.scrollTo(0, scrollPosition);
 //   }, { passive: false });
 
+
+// FAQ
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const answer = button.nextElementSibling;
+
+    if (answer.classList.contains('open')) {
+      // close smoothly
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      requestAnimationFrame(() => {
+        answer.style.maxHeight = '0';
+        answer.classList.remove('open');
+      });
+    } else {
+      // open smoothly
+      answer.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+
+      // reset maxHeight after animation so it adapts if content changes
+      answer.addEventListener('transitionend', () => {
+        if (answer.classList.contains('open')) {
+          answer.style.maxHeight = 'none';
+        }
+      }, { once: true });
+    }
+  });
+});
