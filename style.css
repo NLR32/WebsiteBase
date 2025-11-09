@@ -494,6 +494,12 @@ p{
   opacity: 0;
 }
 
+form{
+  z-index: 2;
+    color: white;
+    position: relative;
+}
+
 @keyframes animation {
 
     0%, 100% { top: 0; }
