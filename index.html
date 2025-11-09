@@ -60,51 +60,7 @@
             </div>
         </div>
     </div>
-    
-    <section class="content" id="about-us">
-
-        <header>About Us</header>
-        <h1>Hear more <span class="highlight">About Us</span></h1>
-        <!-- <div id="glow-ball"></div> -->
-        <div id="about-box">
-        <div id="outer-headings">
-          <h2>
-            Content isn’t just seen it<br>
-            <div id="inner-headings">
-              <span class="highlight glow">
-                CONNECTS<br>
-                EDUCATES<br>
-                Illuminates<br>
-                Amplifies<br>
-                Transforms<br>
-                Empowers<br>
-              </span>
-            </div>
-          </h2>
-        </div>
-        
-      
-
-        <div id="about-right">
-          <h2>It’s not enough to simply record a video and add titles.</h2>
-          <div id="mini-top" class="mini-box"><h3>In a sea of AI tools and generic edits, anyone can throw a video together. <span class="highlight"> But real impact? </span>  That comes when every frame speaks directly to the world you inhabit.</h3></div>
-          <div id="mini-grid">
-            <div id="mini-left">
-              <div class="mini-emph mini-box"><h3>Every reel should <br><span class="highlight">live and breathe</span> <br>in the context of your realm</h3></div>
-              <div class="mini-box"><h3>We craft a visual language and brand design that’s steeped in your world, making every frame feel intentional, authentic, and<span class="highlight"> unmistakably yours.</span></h3></div>
-            </div>
-            <div class="mini-box" id="mini-right">
-              <h3>That’s why ClipSalt exists. We’re a <span class="highlight">boutique, hyper-focused</span> editing studio dedicated to short-form content that doesn’t just look good, it resonates</h3>
-              
-            </div>
-          </div>
-          
-     
-      </div>
-    </div>
-
-    </section>
-
+  
    
       <section class="services" id="short-form">
         <header>Short Form Content</header>
@@ -184,7 +140,7 @@
 
       <section class="services" id="long-form">
         <header>Long Form Content</header>
-        <h1>Upgrade your <span class="highlight">podcasts</span> and <br><span class="highlight">full-length</span> videos</h1>
+        <h1>Upgrade your <span class="highlight">podcasts</span> and <span class="highlight">full-length</span> videos</h1>
         <div id="grid">
           <div class="serv longs active">
             <div class="serv-ex horizontal">
@@ -312,6 +268,50 @@
         <button class="click mail ">Get in Touch</button>
       </section>
 
+      <section class="content" id="about-us">
+
+        <header>About Us</header>
+        <h1>Hear more <span class="highlight">About Us</span></h1>
+        <!-- <div id="glow-ball"></div> -->
+        <div id="about-box">
+        <div id="outer-headings">
+          <h2>
+            Content isn’t just seen it<br>
+            <div id="inner-headings">
+              <span class="highlight glow">
+                CONNECTS<br>
+                EDUCATES<br>
+                Illuminates<br>
+                Amplifies<br>
+                Transforms<br>
+                Empowers<br>
+              </span>
+            </div>
+          </h2>
+        </div>
+        
+      
+
+        <div id="about-right">
+          <h2>It’s not enough to simply record a video and add titles.</h2>
+          <div id="mini-top" class="mini-box"><h3>In a sea of AI tools and generic edits, anyone can throw a video together. <span class="highlight"> But real impact? </span>  That comes when every frame speaks directly to the world you inhabit.</h3></div>
+          <div id="mini-grid">
+            <div id="mini-left">
+              <div class="mini-emph mini-box"><h3>Every reel should <br><span class="highlight">live and breathe</span> <br>in the context of your realm</h3></div>
+              <div class="mini-box"><h3>We craft a visual language and brand design that’s steeped in your world, making every frame feel intentional, authentic, and<span class="highlight"> unmistakably yours.</span></h3></div>
+            </div>
+            <div class="mini-box" id="mini-right">
+              <h3>That’s why ClipSalt exists. We’re a <span class="highlight">boutique, hyper-focused</span> editing studio dedicated to short-form content that doesn’t just look good, it resonates</h3>
+              
+            </div>
+          </div>
+          
+     
+      </div>
+    </div>
+
+    </section>
+
       <section id="FAQ" class="faq-section">
         <header>FAQ</header>
         <h1 class=" highlight faq-title">Frequently Asked Questions</h1>
@@ -379,6 +379,47 @@
         <h5>Designed by RoseDigital</h5>
         
       </section>
+
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden">
+          <label>Don’t fill this out: <input name="bot-field"></label>
+        </p>
+      
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      
+      <div id="thank-you" style="display:none; margin-top:1rem; color:var(--primary-color); font-size:1.2rem;">
+        ✅ Thank you! Your message has been sent.
+      </div>
+
+
+      <script>
+        const form = document.getElementById('contact-form');
+        const thankYou = document.getElementById('thank-you');
+        
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+        
+          const formData = new FormData(form);
+          const encoded = new URLSearchParams(formData).toString();
+        
+          try {
+            await fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: encoded
+            });
+            form.style.display = "none";
+            thankYou.style.display = "block";
+          } catch (error) {
+            alert("There was an error sending your message. Please try again.");
+          }
+        });
+        </script>
       
 
 

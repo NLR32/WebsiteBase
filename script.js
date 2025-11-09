@@ -1,26 +1,42 @@
-// CURSOR FOLLOWING
+// CURSOR FOLLOWING (with smooth delay)
 const cursor = document.getElementById("cursor");
 
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+
+// how "slow" the cursor follows — smaller = slower, larger = faster
+const speed = 0.15;
+
 document.addEventListener("mousemove", (event) => {
-  const x = event.clientX-5;
-  const y = event.clientY-5;
+  mouseX = event.clientX - 5;
+  mouseY = event.clientY - 5;
 
-
-  cursor.style.left = `${x}px`;
-  cursor.style.top = `${y}px`;
-  // console.log(cursor.style.left)
-
-  if (event.target.tagName.toLowerCase() === "button") {
+  if (event.target.tagName.toLowerCase() === "button" || event.target.id.toLowerCase("join-us")) {
     cursor.style.backgroundColor = "black";
-    cursor.style.width = "10px"
-    cursor.style.height = "10px"
-    console.log("button")
+    cursor.style.width = "10px";
+    cursor.style.height = "10px";
   } else {
     cursor.style.backgroundColor = "var(--primary-color)";
-    cursor.style.width = "15px"
-    cursor.style.height = "15px"
+    cursor.style.width = "15px";
+    cursor.style.height = "15px";
   }
 });
+
+function animate() {
+  // interpolate toward the mouse position
+  cursorX += (mouseX - cursorX) * speed;
+  cursorY += (mouseY - cursorY) * speed;
+
+  cursor.style.left = `${cursorX}px`;
+  cursor.style.top = `${cursorY}px`;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
 
 // SHORTS GALLERY
 const servs = document.querySelectorAll(".shorts");
@@ -46,7 +62,7 @@ rightBtn.addEventListener("click", () => showServ(currentIndex + 1));
 //jump by button
 document.querySelectorAll(".sub-btn").forEach(button => {
   button.addEventListener("click", () => {
-    const targetElement = document.getElementById("about-us");
+    const targetElement = document.getElementById("compare");
     if (targetElement) {
       targetElement.scrollIntoView({
         behavior: 'smooth', // smooth scrolling animation
