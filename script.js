@@ -13,10 +13,11 @@ document.addEventListener("mousemove", (event) => {
   mouseX = event.clientX - 5;
   mouseY = event.clientY - 5;
 
-  if (event.target.tagName.toLowerCase() === "button" || event.target.id.toLowerCase("join-us")) {
+  if (event.target.tagName.toLowerCase() === "button" || event.target.id.toLowerCase() == "join-us") {
     cursor.style.backgroundColor = "black";
     cursor.style.width = "10px";
     cursor.style.height = "10px";
+    console.log(event.target.id.toLowerCase());
   } else {
     cursor.style.backgroundColor = "var(--primary-color)";
     cursor.style.width = "15px";

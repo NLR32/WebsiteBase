@@ -74,7 +74,7 @@
                 <h3>News/ Education</h3>
                 <p>Quickly teach your audience. Clearly and effectively communicate complicated ideas concisely.</p>
               </div>
-              <div class="serv-ex">
+              <div class="serv-ex vert">
                 <video src="video/edu-vid.mp4" autoplay muted loop playsinline></video>
               </div>
             </div>
@@ -84,7 +84,7 @@
                 <h3>Animated Content</h3>
                 <p>Use animation to show off your content. Explore new mediums for your audience.</p>
               </div>
-              <div class="serv-ex">
+              <div class="serv-ex vert">
                 <video src="video/saas-vid.mp4" autoplay muted loop playsinline></video>
               </div>
             </div>
@@ -94,7 +94,7 @@
                 <h3>Podcast Reels</h3>
                 <p>Transform long-form podcast content into digestible short-form pieces. Expand vectors of engagement.</p>
               </div>
-              <div class="serv-ex">
+              <div class="serv-ex vert">
                 <video src="video/Molly Jong Fast.mp4" autoplay muted loop playsinline></video>
               </div>
             </div>
@@ -104,7 +104,7 @@
                 <h3>Zoom Production</h3>
                 <p>Get production done remotely. Streamline your production process.</p>
               </div>
-              <div class="serv-ex">
+              <div class="serv-ex vert">
                 <video src="video/edu-vid2.mp4" autoplay muted loop playsinline></video>
               </div>
             </div>
@@ -114,7 +114,7 @@
                 <h3>Talking Head Reels</h3>
                 <p>Enhance conversational content into distilled videos for your audience and new viewers.</p>
               </div>
-              <div class="serv-ex">
+              <div class="serv-ex vert">
                 <video src="video/talking-vid.mp4" autoplay muted loop playsinline></video>
               </div>
             </div>
@@ -124,7 +124,7 @@
                 <h3>Podcast Production</h3>
                 <p>Riverside, online or in studio production, multicam capabilities.</p>
               </div>
-              <div class="serv-ex">
+              <div class="serv-ex vert">
                 <video src="video/pod-vid.mp4" autoplay muted loop playsinline></video>
               </div>
             </div>
@@ -352,7 +352,22 @@
         <h2>Join Us</h2>
         <p>Be part of our journey - breathe life into your content</p>
         <p>Whether it’s exploring a pivotal historical event, highlighting a visionary author, or bringing an inspiring idea to life - from breaking news to educational series, podcasts to explainer videos, let us take your ideas and transform them into reels that are thoughtful, engaging, and fully aligned with your niche.</p>
-        <button href="#contact" class="click mail join-btn"> Work With Us</button>
+        
+
+        <form
+        id="contact-form"
+        action="https://formsubmit.co/nlrose32@gmail.com"
+        method="POST"
+      >
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="usr-email">Email:</label>
+        <input type="email" id="usr-email" name="email" required />
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button href="#contact" class="click mail join-btn"> Send Message</button>
+        <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html?success=true"" />
+    </form>
       </section>
       
       <section class="content" id="contact">
@@ -378,49 +393,23 @@
         <hr>
         <h5>Designed by RoseDigital</h5>
         
-      </section>
+      </section>>
 
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="hidden">
-          <label>Don’t fill this out: <input name="bot-field"></label>
-        </p>
-      
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <textarea name="message" placeholder="Your message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-      
-      <div id="thank-you" style="display:none; margin-top:1rem; color:var(--primary-color); font-size:1.2rem;">
-        ✅ Thank you! Your message has been sent.
-      </div>
 
 
       <script>
-        const form = document.getElementById('contact-form');
-        const thankYou = document.getElementById('thank-you');
-        
-        form.addEventListener('submit', async (e) => {
-          e.preventDefault();
-        
-          const formData = new FormData(form);
-          const encoded = new URLSearchParams(formData).toString();
-        
-          try {
-            await fetch("/", {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: encoded
-            });
-            form.style.display = "none";
-            thankYou.style.display = "block";
-          } catch (error) {
-            alert("There was an error sending your message. Please try again.");
+        // When the page loads, check if it was redirected with ?success=true
+        window.addEventListener('DOMContentLoaded', () => {
+          const urlParams = new URLSearchParams(window.location.search);
+          if (urlParams.get('success') === 'true') {
+            alert('Email was sent successfully!');
+            // Optional: remove the query so the alert doesn’t show again on refresh
+            window.history.replaceState({}, document.title, window.location.pathname);
           }
         });
-        </script>
-      
+      </script>
+
+
 
 
       <script src="script.js"></script>

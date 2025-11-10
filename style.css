@@ -67,9 +67,11 @@ header{
     width: 25vw;
     flex-direction: row;
     justify-content: space-between;
+
 }
 #title-opts .click{
   width: 150px;
+  margin: 10px;
 }
 
 #nav-cont{
@@ -115,6 +117,7 @@ header{
   color: black;
   background-color: var(--primary-color);
   border-style: none;
+  min-width: 50px;
 }
 
 
@@ -500,6 +503,12 @@ form{
     position: relative;
 }
 
+#thank-you{
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
 @keyframes animation {
 
     0%, 100% { top: 0; }
@@ -637,12 +646,13 @@ h4{
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 15vh;
+
   
 }
 
 #short-form{
-  margin-top: 1000px;
+  margin-top: 900px;
+
 }
 
 
@@ -782,7 +792,7 @@ h4{
   width: 40vw;
   height: 25vw;
   transition: all 0.3s ease-in-out; 
-
+  gap: 10px, 10px;
   filter: grayscale(0%);
 }
 
@@ -927,7 +937,7 @@ h4{
 .join-btn {
   background: var(--text-color);
   color: var(--primary-color);
-  padding: 12px 30px;
+
   border-radius: var(--border-radius);
   text-decoration: none;
   font-weight: bold;
@@ -938,6 +948,32 @@ h4{
   background: transparent;
   color: white;
   border: 2px solid white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input, textarea {
+  border-radius: var(--border-radius);
+  border-style: solid;
+  border-color: var(--text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 10px;
+}
+label{
+  padding: 10px;
+}
+input {
+  width: 200px;
+}
+
+textarea {
+  width: 400px;
+  height: 100px;
 }
 
 /* Contact Us */
@@ -1125,9 +1161,73 @@ hr {
   transform-origin: 20vw -3vh;
   /* box-shadow: 40vmin 0 5.196265905749415vmin currentColor; */
 }
+@media screen and (max-width: 1050px) {
 
+
+/* SERVICES */
+.scroll-wrapper {
+  width: 95%;
+}
+#serv-box {
+  display: flex;
+}
+.shorts {
+  width: 100%;
+  height: 100%;;               /* fill the #serv-box area */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  height: 400px;
+
+  /* invisible by default */
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.98);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+  pointer-events: none;     
+}
+
+/* The one that should show */
+.shorts.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 2;
+  pointer-events: auto;
+  display: flex;
+  align-items: stretch;
+      
+}
+
+/* Make video size adapt cleanly inside the stacked slide */
+.vert video {
+  width: 30vw;
+  height: 50vw;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.serv-desc {
+  width: 100%;
+  text-align: center;
+  
+}
+
+.serv-desc h3{
+  width: 30vw;
+  overflow-wrap: break-word;
+}
+
+.scroll-btn {
+  /* display: none; */
+  padding: 5px;
+  margin: 5px;
+}
+}
 /* ---------- MOBILE RESPONSIVE (under 800px) ---------- */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
 
   body {
     overflow-x: hidden;
@@ -1162,7 +1262,7 @@ hr {
     height: auto;
     /* padding-top: 30vh;
     padding-bottom: 10vh; */
-    margin-top: 100px;
+    margin-top: 150px;
     text-align: center;
   }
 
@@ -1199,21 +1299,29 @@ hr {
   }
 
   .click {
-    width: 80%;
+    width: 150px;
     height: 3rem;
     font-size: 1rem;
   }
 
+  #short-form{
+    margin-top: 600px;
+  }
+
   /* ABOUT SECTION */
   #about-us {
-    margin-top: 700px;
+    /* margin-top: 600px; */
     /* padding: 10vh 5vw; */
   }
 
   #about-right,
   #outer-headings {
-    width: 100%;
+    width: 95%;
     text-align: center;
+  }
+
+  #about-us h1 {
+    margin-top: 20px;
   }
 
   #outer-headings h2 {
@@ -1240,67 +1348,19 @@ hr {
 
   }
 
-  /* SERVICES */
-  .scroll-wrapper {
-    width: 95%;
-  }
-  #serv-box {
-    display: flex;
-  }
-  .serv {
-    width: 100%;
-    height: 100%;;               /* fill the #serv-box area */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
   
-    /* invisible by default */
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.98);
-    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
-    pointer-events: none;       /* prevent interaction with hidden slides */
-  }
-  
-  /* The one that should show */
-  .serv.active {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-    z-index: 2;
-    pointer-events: auto;
-  }
-  
-  /* Make video size adapt cleanly inside the stacked slide */
-  .serv-ex video {
-    width: 30vw;
-    height: 50vw;
-    object-fit: cover;
-    border-radius: var(--border-radius);
-  }
-
-  .serv-desc {
-    width: 100%;
-    text-align: center;
-    
-  }
-
-  .serv-desc h3{
-    width: 30vw;
-    overflow-wrap: break-word;
-  }
-
-  .scroll-btn {
-    /* display: none; */
-    padding: 5px;
-    margin: 5px;
-  }
 
   #grid {
     display: flex;
     flex-direction: column;
     gap: 10vh 10vh;
+    height: auto;
+
+  }
+
+  .longs {
+    height: 100px;
+    margin: 30px;
   }
 
 .horizontal video {
@@ -1344,18 +1404,39 @@ hr {
     text-align: center;
   }
 
+  input, textarea {
+    width: 90%;       /* scale to almost full width of screen */
+    max-width: 400px; /* prevent huge textarea on larger mobile screens */
+  }
+
+  textarea {
+    height: 120px;    /* slightly taller for easier typing on mobile */
+  }
+
+  label {
+    padding: 5px;     /* reduce padding for small screens */
+  }
+
   #contact-box {
     flex-direction: row;
     align-items: center;
     text-align: center;
     height: fit-content;
-    padding: 5px;
+    /* padding-bottom: 20px; */
+    /* padding-right: 5px; */
+    padding: 15px;
+    width: 95%;
+  }
+
+  #email {
+    left: 0;
   }
 
   #contact-links {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
   }
 
   #contact-links a {
