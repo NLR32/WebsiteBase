@@ -17,7 +17,7 @@ document.addEventListener("mousemove", (event) => {
     cursor.style.backgroundColor = "black";
     cursor.style.width = "10px";
     cursor.style.height = "10px";
-    console.log(event.target.id.toLowerCase());
+    // console.log(event.target.id.toLowerCase());
   } else {
     cursor.style.backgroundColor = "var(--primary-color)";
     cursor.style.width = "15px";
@@ -40,27 +40,63 @@ animate();
 
 
 // SHORTS GALLERY
-const servs = document.querySelectorAll(".shorts");
-const leftBtn = document.getElementById("s-left");
-const rightBtn = document.getElementById("s-right");
+// Get elements
+const servBox = document.getElementById('serv-box');
+const leftBtn = document.getElementById('s-left');
+const rightBtn = document.getElementById('s-right');
+const screenW = window.width;
+var visItems =  1;
 
-let currentIndex = 0;
-
-// Show only the first one at start
-servs[currentIndex].classList.add("active");
-
-function showServ(index) {
-  servs[currentIndex].classList.remove("active");
-  currentIndex = (index + servs.length) % servs.length; // wrap around
-  servs[currentIndex].classList.add("active");
+if ( screenW > 1110) {
+  visItems = 3;
+} else if (screenW > 600 ){
+  visItems = 2;
 }
 
-leftBtn.addEventListener("click", () => showServ(currentIndex - 1));
-rightBtn.addEventListener("click", () => showServ(currentIndex + 1));
+
+
+const items = servBox.querySelectorAll('.shorts');
+let currentIndex = 0;
+
+// Width of one item (including gap)
+function getItemWidth() {
+  const style = getComputedStyle(items[0]);
+  const gap = parseInt(style.marginRight) || 10;
+  return items[0].offsetWidth + gap;
+}
+
+// Scroll to a specific index
+function scrollToIndex(index) {
+  const itemWidth = getItemWidth();
+  servBox.scrollTo({
+    left: index * itemWidth,
+    behavior: 'smooth'
+  });
+}
+
+// Right button
+rightBtn.addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex >= items.length-visItems + 1) {
+    currentIndex = 0; // wrap to first
+  }
+  scrollToIndex(currentIndex);
+});
+
+// Left button
+leftBtn.addEventListener('click', () => {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = items.length - visItems; // wrap to last
+  }
+  scrollToIndex(currentIndex);
+});
 
 
 
-//jump by button
+
+
+//JUMP BY BUTTON
 document.querySelectorAll(".sub-btn").forEach(button => {
   button.addEventListener("click", () => {
     const targetElement = document.getElementById("compare");
@@ -78,21 +114,14 @@ document.querySelectorAll(".sub-btn").forEach(button => {
 // MAIL SECTION
   document.querySelectorAll(".mail").forEach(button => {
     button.addEventListener("click", () => {
-      window.location.href = "mailto:ari@clipsalt.com";
+      document.getElementById("join-us").scrollIntoView({
+        behavior: 'smooth', // smooth scrolling animation
+        block: 'start'      // aligns top of element with top of viewport
+      });
     });
   });
 
- 
-// // SCROLLING
-//   let scrollPosition = 0;
-//   const scrollSpeed = 0.8; // Adjust for desired slowness
 
-//   window.addEventListener('wheel', (e) => {
-//       e.preventDefault(); // Prevent default scroll
-
-//       scrollPosition += e.deltaY * scrollSpeed;
-//       window.scrollTo(0, scrollPosition);
-//   }, { passive: false });
 
 
 // FAQ
@@ -121,3 +150,27 @@ document.querySelectorAll('.faq-question').forEach(button => {
     }
   });
 });
+
+// EMAIL RELOAD
+window.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('success') === 'true') {
+    alert('Email was sent successfully!');
+    // Optional: remove the query so the alert doesn’t show again on refresh
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+});
+
+// boxes match heights
+function matchHeights() {
+  const left = document.getElementById('ibox1');
+  const right = document.getElementById('ibox2');
+  left.style.height = `${right.scrollHeight}px`;
+}
+
+// run once after page load
+window.addEventListener('load', matchHeights);
+
+// optional: re-run on resize
+window.addEventListener('resize', matchHeights);
+
