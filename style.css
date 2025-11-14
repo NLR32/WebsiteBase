@@ -817,7 +817,7 @@ h4{
   height: 25vw;
   transition: all 0.3s ease-in-out; 
   gap: 10px, 10px;
-  filter: grayscale(0%);
+  filter: grayscale(100%);
   border-radius: var(--border-radius);
   object-fit: cover;
 }
@@ -825,7 +825,7 @@ h4{
 .horizontal video:hover{
   width: 42vw;
   height: 27vw;
-  filter: grayscale(100%);
+  filter: grayscale(0%);
 
 }
 
