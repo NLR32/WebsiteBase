@@ -197,20 +197,22 @@ header{
 }
 
 #team img {
-  width: 30px;
-  height: 30px;
-  /* border-radius: 50%; */
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   object-fit: cover;
   margin-left: -10px; /* overlap amount */
   /* border: 3px solid white; optional border for clean overlap */
-  transition: transform 0.3s ease, z-index 0.3s ease;
+  transition: all 0.3s ease, z-index 0.3s ease;
   position: relative;
   z-index: 1;
+
 
 }
 
 #team img:hover {
-  transform: scale(1.3);
+  transform: translateY(-7px) scale(1.2);
+
   cursor: pointer;
 }
 
@@ -240,6 +242,7 @@ h1{
 
 #stars img{
   padding-right: 2px;
+  
 }
 
 p{
@@ -1294,12 +1297,17 @@ hr {
     text-align: center;
   }
 
+  #team img {
+    height: 30px;
+    width: 30px;
+  }
+
   #title-box {
     width: 90%;
   }
 
   #title{
-    padding: 5vh;
+    padding: 1vh;
   }
   h1 {
     font-size: 2rem;
