@@ -40,57 +40,85 @@ animate();
 
 
 // SHORTS GALLERY
-// Get elements
+
 const servBox = document.getElementById('serv-box');
 const leftBtn = document.getElementById('s-left');
 const rightBtn = document.getElementById('s-right');
-const screenW = window.innerWidth;
-var visItems =  1;
-// console.log(screenW);
-if ( screenW > 1110) {
-  visItems = 3;
-} else if (screenW > 600 ){
-  visItems = 2;
-}
 
-// console.log(visItems);
-
-const items = servBox.querySelectorAll('.shorts');
+let visItems = 1;
+let items = servBox.querySelectorAll('.shorts');
 let currentIndex = 0;
 
-// Width of one item (including gap)
+// -------- Determine visible items based on screen width -------- //
+function calcVisibleItems() {
+  const screenW = window.innerWidth;
+
+  if (screenW > 1110) {
+    return 3;
+  } else if (screenW > 600) {
+    return 2;
+  } else {
+    return 1;
+  }
+}
+
+// -------- Width of one item (including gap) -------- //
 function getItemWidth() {
   const style = getComputedStyle(items[0]);
   const gap = parseInt(style.marginRight) || 10;
   return items[0].offsetWidth + gap;
 }
 
-// Scroll to a specific index
-function scrollToIndex(index) {
+// -------- Scroll to a specific index -------- //
+function scrollToIndex(index, smooth = true) {
   const itemWidth = getItemWidth();
   servBox.scrollTo({
     left: index * itemWidth,
-    behavior: 'smooth'
+    behavior: smooth ? 'smooth' : 'instant'
   });
 }
 
-// Right button
+// ====== HANDLE RESIZE ====== //
+function handleResize() {
+  visItems = calcVisibleItems();
+
+  // Clamp currentIndex so it doesn't overshoot new max
+  const maxIndex = items.length - visItems;
+  if (currentIndex > maxIndex) currentIndex = maxIndex;
+  if (currentIndex < 0) currentIndex = 0;
+
+  // Recalculate widths + snap instantly (no smooth)
+  scrollToIndex(currentIndex, false);
+}
+
+// Debounce resize handler
+let resizeTimeout;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(handleResize, 150);
+});
+
+// Initial calculation
+visItems = calcVisibleItems();
+
+
+// ====== BUTTON CLICK LOGIC ====== //
 rightBtn.addEventListener('click', () => {
   currentIndex++;
-  if (currentIndex >= items.length-visItems + 1) {
-    currentIndex = 0; // wrap to first
+  if (currentIndex >= items.length - visItems + 1) {
+    currentIndex = 0;
   }
   scrollToIndex(currentIndex);
 });
 
-// Left button
 leftBtn.addEventListener('click', () => {
   currentIndex--;
   if (currentIndex < 0) {
-    currentIndex = items.length - visItems; // wrap to last
+    currentIndex = items.length - visItems;
   }
   scrollToIndex(currentIndex);
 });
+
 
 
 
