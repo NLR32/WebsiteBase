@@ -44,16 +44,16 @@ animate();
 const servBox = document.getElementById('serv-box');
 const leftBtn = document.getElementById('s-left');
 const rightBtn = document.getElementById('s-right');
-const screenW = window.width;
+const screenW = window.innerWidth;
 var visItems =  1;
-
+// console.log(screenW);
 if ( screenW > 1110) {
   visItems = 3;
 } else if (screenW > 600 ){
   visItems = 2;
 }
 
-
+// console.log(visItems);
 
 const items = servBox.querySelectorAll('.shorts');
 let currentIndex = 0;
