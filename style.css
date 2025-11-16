@@ -826,8 +826,9 @@ h4{
 }
 
 .horizontal video:hover{
-  width: 42vw;
-  height: 27vw;
+  /* width: 42vw;
+  height: 27vw; */
+  transform: scale(1.1);
   filter: grayscale(0%);
 
 }
@@ -1413,8 +1414,9 @@ hr {
 }
 
 .horizontal video:hover{
-  width: 72vw;
-  height: 41vw;
+  /* width: 72vw;
+  height: 41vw; */
+  
 }
 
   /* COMPARE SECTION */
