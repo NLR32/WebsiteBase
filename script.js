@@ -47,15 +47,17 @@ const rightBtn = document.getElementById('s-right');
 
 let visItems = 1;
 let items = servBox.querySelectorAll('.shorts');
-let currentIndex = 0;
+let currentIndex = 6;
+
+scrollToIndex(currentIndex, false);
 
 // -------- Determine visible items based on screen width -------- //
 function calcVisibleItems() {
   const screenW = window.innerWidth;
 
-  if (screenW > 1110) {
+  if (screenW > 1230) {
     return 3;
-  } else if (screenW > 600) {
+  } else if (screenW > 800) {
     return 2;
   } else {
     return 1;
@@ -64,18 +66,32 @@ function calcVisibleItems() {
 
 // -------- Width of one item (including gap) -------- //
 function getItemWidth() {
-  const style = getComputedStyle(items[0]);
-  const gap = parseInt(style.marginRight) || 10;
+  const containerStyle = getComputedStyle(servBox);
+  const gap = parseInt(containerStyle.gap);
+  const margin = parseInt(window.getComputedStyle(items[0]).marginLeft);
+  console.log(margin);
+  // const margin = parseInt(items[0].margin[1]);
   return items[0].offsetWidth + gap;
 }
 
 // -------- Scroll to a specific index -------- //
-function scrollToIndex(index, smooth = true) {
+function scrollToIndex(index, smooth) {
   const itemWidth = getItemWidth();
-  servBox.scrollTo({
-    left: index * itemWidth,
-    behavior: smooth ? 'smooth' : 'instant'
-  });
+  if (visItems > 2){
+    servBox.scrollTo({
+      left: index * itemWidth,
+      behavior: smooth ? 'smooth' : 'instant'
+    });
+  }else{
+    servBox.scrollTo({
+      left: index * itemWidth,
+      behavior: smooth ? 'smooth' : 'instant'
+    });
+  
+  }
+  
+
+  // servBox.style.width = itemWidth * visItems + 'px';
 }
 
 // ====== HANDLE RESIZE ====== //
@@ -86,6 +102,7 @@ function handleResize() {
   const maxIndex = items.length - visItems;
   if (currentIndex > maxIndex) currentIndex = maxIndex;
   if (currentIndex < 0) currentIndex = 0;
+
 
   // Recalculate widths + snap instantly (no smooth)
   scrollToIndex(currentIndex, false);
@@ -105,18 +122,44 @@ visItems = calcVisibleItems();
 // ====== BUTTON CLICK LOGIC ====== //
 rightBtn.addEventListener('click', () => {
   currentIndex++;
-  if (currentIndex >= items.length - visItems + 1) {
-    currentIndex = 0;
+
+  // console.log(currentIndex);
+  if (currentIndex == items.length - visItems) {
+    
+    // jump w animation
+    scrollToIndex(currentIndex, true);
+    
+    setTimeout(() => {
+      // jump w/o animation
+      // console.log("jump w/o")
+      currentIndex = items.length/2 - visItems;
+      scrollToIndex(currentIndex, false);
+    }, 400);
+
+  }else{
+    scrollToIndex(currentIndex, true);
   }
-  scrollToIndex(currentIndex);
+
+  
 });
 
 leftBtn.addEventListener('click', () => {
   currentIndex--;
-  if (currentIndex < 0) {
-    currentIndex = items.length - visItems;
+
+  if (currentIndex == 0) {
+    // jump w animation
+    scrollToIndex(currentIndex, true);
+    
+    setTimeout(() => {
+      // jump w/o animation
+      // console.log("jump w/o")
+      currentIndex = items.length/2;
+      scrollToIndex(currentIndex, false);
+    }, 400);
+
+  }else{
+    scrollToIndex(currentIndex, true);
   }
-  scrollToIndex(currentIndex);
 });
 
 
@@ -189,16 +232,59 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// boxes match heights
-function matchHeights() {
-  const left = document.getElementById('ibox1');
-  const right = document.getElementById('ibox2');
-  left.style.height = `${right.scrollHeight}px`;
+// BOXES
+// function matchHeights() {
+//   const left = document.getElementById('ibox1');
+//   const right = document.getElementById('ibox2');
+//   left.style.height = `${right.scrollHeight}px`;
+//   // right.style.width = `${left.scrollWidth}px`;
+// }
+
+// // run once after page load
+// window.addEventListener('load', matchHeights);
+
+// // optional: re-run on resize
+// window.addEventListener('resize', matchHeights);
+
+
+
+// HORIZONTAL HOVER IN VIEW MOBILE
+const videos = document.querySelectorAll(".horizontal video");
+
+function highlightCenterVideo() {
+  const screenCenter = window.innerHeight / 2;
+
+  let activeVideo = null;
+
+  videos.forEach(video => {
+    const rect = video.getBoundingClientRect();
+    const videoTop = rect.top;
+    const videoBottom = rect.bottom;
+
+    const middle50Top = window.innerHeight * 0.15;
+    const middle50Bottom = window.innerHeight * 0.85;
+
+    // Check if the video covers the middle 50% zone
+    const intersectsMiddleZone =
+      videoBottom > middle50Top && videoTop < middle50Bottom;
+
+    if (intersectsMiddleZone) {
+      activeVideo = video;
+    }
+  });
+
+  // Clear all
+  videos.forEach(v => v.classList.remove("in-view"));
+
+  // Highlight only the one in the center
+  if (activeVideo) {
+    activeVideo.classList.add("in-view");
+  }
 }
 
-// run once after page load
-window.addEventListener('load', matchHeights);
+// Run on scroll + resize
+window.addEventListener("scroll", highlightCenterVideo);
+window.addEventListener("resize", highlightCenterVideo);
 
-// optional: re-run on resize
-window.addEventListener('resize', matchHeights);
-
+// Run on page load
+highlightCenterVideo();
