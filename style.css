@@ -1299,29 +1299,7 @@ hr {
     overflow-x: hidden;
   }
 
-  /* NAVBAR */
-  #navbar {
-    flex-direction: row;
-    height: auto;
-    gap: 10px;
-    border: none;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-  }
-
-  #navbar img {
-    width: 60px;
-    height: 60px;
-  }
-
-  #navbar a,
-  #navbar .click {
-    font-size: 0.9rem;
-  }
+  
 
   /* FRONT PAGE */
   #front-page {
@@ -1556,6 +1534,31 @@ hr {
 
 
 @media screen and (max-width: 600px) {
+
+  /* NAVBAR */
+  #navbar {
+    flex-direction: row;
+    height: auto;
+    gap: 10px;
+    border: none;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  #navbar img {
+    width: 60px;
+    height: 60px;
+  }
+
+  #navbar a,
+  #navbar .click {
+    font-size: 0.9rem;
+  }
+
 .horizontal video {
   width: 80vw;
   height: 45vw;
@@ -1566,8 +1569,13 @@ hr {
 } */
 
 #serv-box {
-  width: 60vw;
 
+  /* gap: 20px; */
+  width: 90vw;
+
+}
+.scroll-wrapper {
+  /* width: 90vw; */
 }
 
 .vert video {
@@ -1576,12 +1584,21 @@ hr {
 }
 
 .shorts {
-  margin: 0;
+  /* margin: 0; */
 }
 
 
-
-
-
 }
 
+
+@media screen and (max-width: 350px) {
+  .vert video{
+    width: 70vw;
+    height: 130vw;
+  }
+
+  .shorts{
+    position: relative;
+    left: -14px;
+  }
+}

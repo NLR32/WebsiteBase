@@ -68,8 +68,8 @@ function calcVisibleItems() {
 function getItemWidth() {
   const containerStyle = getComputedStyle(servBox);
   const gap = parseInt(containerStyle.gap);
-  const margin = parseInt(window.getComputedStyle(items[0]).marginLeft);
-  console.log(margin);
+  // const margin = parseInt(window.getComputedStyle(items[0]).marginLeft);
+
   // const margin = parseInt(items[0].margin[1]);
   return items[0].offsetWidth + gap;
 }
@@ -77,18 +77,12 @@ function getItemWidth() {
 // -------- Scroll to a specific index -------- //
 function scrollToIndex(index, smooth) {
   const itemWidth = getItemWidth();
-  if (visItems > 2){
-    servBox.scrollTo({
-      left: index * itemWidth,
-      behavior: smooth ? 'smooth' : 'instant'
-    });
-  }else{
-    servBox.scrollTo({
-      left: index * itemWidth,
-      behavior: smooth ? 'smooth' : 'instant'
-    });
+
+  servBox.scrollTo({
+    left: index * itemWidth,
+    behavior: smooth ? 'smooth' : 'instant'
+  });
   
-  }
   
 
   // servBox.style.width = itemWidth * visItems + 'px';
