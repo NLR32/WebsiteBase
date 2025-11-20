@@ -256,7 +256,7 @@ function highlightCenterVideo() {
     const videoBottom = rect.bottom;
 
     const middle50Top = window.innerHeight * 0.15;
-    const middle50Bottom = window.innerHeight * 0.85;
+    const middle50Bottom = window.innerHeight * 0.3;
 
     // Check if the video covers the middle 50% zone
     const intersectsMiddleZone =
