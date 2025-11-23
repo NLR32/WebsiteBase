@@ -695,7 +695,9 @@ h4{
 #customers h3 {
 
   color: var(--subtext-color);
-  font-weight: 100;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 50px;
 
 }
 
@@ -703,15 +705,21 @@ h4{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 80vw;
+  width: 60vw;
   justify-content: center;
+  align-items: center;
+}
+
+#toi  {
+  height: 2vw !important;
 }
 
 #customers div img {
-  width: 12vw;
-  height: 8vw;
+  /* width: 12vw; */
+  height: 10vw;
   margin: 2vw;
 }
+
 
 /* Short form */
 
