@@ -705,19 +705,18 @@ h4{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 60vw;
+  width: 90vw;
   justify-content: center;
   align-items: center;
 }
 
-#toi  {
-  height: 2vw !important;
-}
+
 
 #customers div img {
   /* width: 12vw; */
-  height: 10vw;
+  height: 8vw;
   margin: 2vw;
+  border-radius: var(--border-radius);
 }
 
 
