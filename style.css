@@ -739,10 +739,10 @@ h4{
 }
 
 
-/* .shorts:hover{
+.shorts:hover{
   border: 2px solid var(--primary-color);
 
-} */
+}
 
 .shorts-content {
   display: flex;
