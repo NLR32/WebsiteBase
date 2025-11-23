@@ -164,7 +164,7 @@ header{
 
 /* TITLE SECTION */
 #front-page{
-  position: absolute;
+  position: relative;
   margin-top: 175px;
   width: 100vw;
   height: fit-content; 
@@ -682,7 +682,7 @@ h4{
 /* Customers */
 
 #customers{
-  margin-top: 800px;
+  margin-top: 50px;
   width: 100%;
   display: flex;
   flex-direction: column;
