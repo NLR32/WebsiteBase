@@ -1061,7 +1061,9 @@ input, textarea {
   padding: 10px;
 }
 label{
-  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+
 }
 input {
   width: 200px;
@@ -1072,6 +1074,9 @@ textarea {
   height: 100px;
 }
 
+#consent{
+  width: 30px;
+}
 /* Contact Us */
 #contact{ 
 
