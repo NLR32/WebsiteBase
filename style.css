@@ -719,6 +719,13 @@ h4{
   border-radius: var(--border-radius);
 }
 
+@media screen and (max-width: 800px){
+  #customers div img {
+   height: 20vw;
+  }
+  
+}
+
 
 /* Short form */
 
