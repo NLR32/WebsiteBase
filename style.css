@@ -715,6 +715,7 @@ h4{
 #customers div img {
   /* width: 12vw; */
   height: 8vw;
+  width: 8vw;
   margin: 2vw;
   border-radius: var(--border-radius);
 }
@@ -722,6 +723,7 @@ h4{
 @media screen and (max-width: 800px){
   #customers div img {
    height: 20vw;
+   width: 20vw;
   }
   
 }
