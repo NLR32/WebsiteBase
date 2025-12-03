@@ -220,7 +220,7 @@ document.querySelectorAll('.faq-question').forEach(button => {
 window.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get('success') === 'true') {
-    alert('Email was sent successfully!');
+    alert('ClipSalt has received your form, our response time is generally within 24 hours.');
     // Optional: remove the query so the alert doesn’t show again on refresh
     window.history.replaceState({}, document.title, window.location.pathname);
   }
