@@ -981,10 +981,11 @@ h4{
 }
 
 #comp-img {
-  height:17vh;
-  width:21vh;
-  align-self: center;
-  margin-bottom: 8px;
+  height: 13vh;
+    width: 15vh;
+    align-self: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
 }
 .comp-item{
   display: flex;
@@ -1118,6 +1119,7 @@ textarea {
     flex-direction: row;
     padding-bottom: 1vh;
     align-items: center;
+    margin-left: 15px;
 }
 
 #sub-comp-info{
