@@ -98,8 +98,8 @@ header{
 }
 
 #navbar img {
-  width: 90px;
-  height: 90px;
+  width: 57px;
+  height: 55px;
 }
 
 #navbar .click {
@@ -981,7 +981,10 @@ h4{
 }
 
 #comp-img {
-  height: 18vh;
+  height:17vh;
+  width:21vh;
+  align-self: center;
+  margin-bottom: 8px;
 }
 .comp-item{
   display: flex;
@@ -1111,10 +1114,16 @@ textarea {
 }
 
 #contact-company-info{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1vh;
+    align-items: center;
+}
+
+#sub-comp-info{
   display: flex;
   flex-direction: column;
-  padding-bottom: 1vh;
-  /* justify-content: space-evenly; */
+
 }
 
 #long-logo{
@@ -1135,6 +1144,7 @@ textarea {
   text-decoration: none;
   position: relative;
   left: 2vh;
+
 }
 
 #mail-add:hover{
@@ -1145,9 +1155,10 @@ textarea {
 #contact-links{
 
   display: flex;
-  flex-direction: column;
-  padding-right: 1vw;
-  padding-top: 2vh;
+    flex-direction: column;
+    padding-right: 1vw;
+    /* padding-top: 2vh; */
+    justify-content: center;
 
 }
 
